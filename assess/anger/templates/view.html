@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task View</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-700">
+    <div class="flex flex-col gap-2 mx-auto max-w-[400px] p-4 shadow-sm my-8 rounded-lg bg-white">
+        <div class="flex gap-2 justify-end">
+            <a href="/edit/{{selected.id}}" class="px-2 py-1 bg-blue-500 text-white rounded">Edit</a>
+            <a href="/update/{{selected.id}}" class="px-2 py-1 bg-green-900 text-white rounded">Update Attendance</a>
+            <a href="/delete/{{selected.id}}" class="px-2 py-1 bg-red-900 text-white rounded"> Delete</a>
+            </div>
+            <div>
+            <p class="text-gray-500 text-xs">Record ID</p>
+            <h1 class="text-lg font-semibold">{{ selected.name}}</h1>
+
+        </div>
+        <div>
+            <p class="text-gray-500 text-xs">Student ID</p>
+            <h1 class="text-lg font-semibold">{{selected.student_id}}</h1>
+        </div>
+        <div>
+            <p class="text-gray-500 text-xs">Is Present</p>
+            <h1 class="text-lg font-semibold">{{selected.is_present}}</h1>
+        </div>
+        <div>
+            <p class="text-gray-500 text-xs">Date</p>
+            <h1 class="text-lg font-semibold">{{selected.date}}</h1>
+        </div>
+        
+      <a href='/' class="px-2 py-1 bg-blue-500 text-white rounded-sm shadow>Back to All Records">Back to All Records</a>  
+
+    </div>
+
+</body>
+
+</html>

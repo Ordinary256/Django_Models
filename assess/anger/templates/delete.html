@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record View</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex flex-col gap-2 mx-auto max-w-[400px] p-4 shadow-sm my-8 rounded-lg bg-blue-50 text-blue-900">
+        Are you sure you want to delete the Student Record "{{ selected.name }}""
+        <hr>
+        <p class="bg-red text-red-900 p-2 rounded">Once deleted, the record cannot be recovered</p>
+        <div class="flex gap-2">
+            <form action="/delete/{{selected.id}}/" method="post">
+                {% csrf_token %}
+            
+            <button class="px-2 py-1 bg-red-500 text-white rounded" type="submit">Yes,Delete</button>
+            
+            </form>
+            <a href="/view/{{ selected.id }}/" class="px-2 py-1 bg-black text-white rounded">Cancel</a>
+            
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

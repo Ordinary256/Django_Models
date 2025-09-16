@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Records</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-red-100">
+    <nav class="bg-blue-500 text-white p-2 flex justify-between font-semibold">
+    
+<a href="/" >All Students Attendance Records</a>
+
+</nav>
+<hr class="py-2">
+<a href="/add/" class="px-4 bg-blue-500 rounded shadow-sm text-white mx-2">Add new Record</a>
+<div class="bg-green-100">
+<table class="table-auto w-full border-collapse border-gray-300 shadow-md">
+        <thead class="bg-gray-200">
+            <tr>
+                <th class="border border-gray-300 px-4 py-2">#</th>
+                <th class="border border-gray-300 px-4 py-2">Name</th>
+                <th class="border border-gray-300 px-4 py-2">Student ID</th>
+                <th class="border border-gray-300 px-4 py-2">Is Present</th>
+                <th class="border border-gray-300 px-4 py-2">Date</th>
+                <th class="border border-gray-300 px-4 py-2">Actions</th>
+                
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for student in all_records %}
+            <tr>
+                <td class="border border-gray-300 px-4 py-2">{{ student.id }}</td>
+                <td class="border border-gray-300 px-4 py-2">{{student.name }}</td>
+                <td class="border border-gray-300 px-4 py-2">{{ student.student_id }}</td>
+                <td class="border border-gray-300 px-4 py-2">{{ student.is_present }}</td>
+                <td class="border border-gray-300 px-4 py-2">{{ student.date}}</td>
+                <td class="flex gap-2 text-xs">
+                    <a href="/view/{{ student.id }}/" class="text-lg text-green-500">View</a>
+                    <a href="/view/{{ student.id }}/" class="text-lg text-red-500">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+
+    
+</body>
+</html>
