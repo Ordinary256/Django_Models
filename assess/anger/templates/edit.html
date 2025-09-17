@@ -10,7 +10,7 @@
 <body class="bg-yellow-50">
     
         <div class="flex items-center justify-center min-h-screen py-4">
-        <form action="/add/" method="post" class="bg-green-50 p-6 rounded-lg shadow-md w-full max-w-md">
+        <form action="/edit/{{selected.id}}/" method="post" class="bg-green-50 p-6 rounded-lg shadow-md w-full max-w-md">
             <h1 class="text-xl font-bold mb-4">Edit a Record</h1>
             {% csrf_token %}
 <div class="mb-4"> 

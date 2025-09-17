@@ -54,9 +54,13 @@ def editRecord(request,record_id):
     record_to_edit = Attend.objects.get(id=record_id)
     if request.method == 'POST':
         form_data = request.POST
-        record_to_edit.name = form_data.get('name')
-        record_to_edit.student_id = form_data.get('studentid')
-        record_to_edit.is_present ='ispresent' in request.POST
+        edited_name = form_data.get('name')
+        edited_student_id = form_data.get('studentid')
+        edited_is_present ='ispresent' in request.POST
+
+        record_to_edit.name = edited_name
+        record_to_edit.student_id = edited_student_id
+        record_to_edit.is_present = edited_is_present
         record_to_edit.save()
         return redirect('/view/'+str(record_to_edit.id))
     context = {

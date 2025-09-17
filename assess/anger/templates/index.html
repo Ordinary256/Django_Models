@@ -38,7 +38,7 @@
                 <td class="border border-gray-300 px-4 py-2">{{ student.date}}</td>
                 <td class="flex gap-2 text-xs">
                     <a href="/view/{{ student.id }}/" class="text-lg text-green-500">View</a>
-                    <a href="/view/{{ student.id }}/" class="text-lg text-red-500">Delete</a>
+                    <a href="/delete/{{ student.id }}/" class="text-lg text-red-500">Delete</a>
                 </td>
             </tr>
             {% endfor %}
